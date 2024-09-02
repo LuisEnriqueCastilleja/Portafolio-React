@@ -1,12 +1,27 @@
-import { Box, Grid } from "@mui/material"
+import { Box, Button, Grid } from "@mui/material"
 import { LineChart } from "../components/LineChart"
 import { PieChart } from "../components/PieChart"
 import { BarChart } from "../components/BarChart"
+import { useNavigate } from "react-router-dom"
 
 export const GraphicsChartPage = () => {
+    const navigate = useNavigate();
+
+    const onHandleBack = () => {
+        navigate(-1);
+    }
+
     return (
         <>
-            <Grid container justifyContent={'center'} pt={2} rowGap={2} display='grid'>
+            <Grid container
+                sx={{
+                    backgroundColor: 'lightgray',
+                    pt: 2,
+                    columnGap: 5,
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    justifyContent: 'center'
+                }}>
                 <Grid item>
                     <Box sx={{
                         border: 1,
@@ -27,9 +42,11 @@ export const GraphicsChartPage = () => {
                         <BarChart />
                     </Box>
                 </Grid>
-                <Grid item pb={2}>
+                <Grid item>
                     <Box sx={{
                         border: 1,
+                        mt: 2,
+                        mb: 2,
                         borderColor: 'blue',
                         height: 300,
                         width: 500,
@@ -37,8 +54,13 @@ export const GraphicsChartPage = () => {
                         <PieChart />
                     </Box>
                 </Grid>
-
-            </Grid>
+                <Button variant="outlined"
+                    sx={{
+                        height: 50,
+                        width: 100,
+                        alignSelf: 'center',
+                    }} onClick={onHandleBack}>Back</Button>
+            </Grid >
         </>
 
 

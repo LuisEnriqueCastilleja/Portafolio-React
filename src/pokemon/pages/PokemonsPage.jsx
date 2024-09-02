@@ -1,15 +1,19 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getPokemons } from "../thunks";
-import { Divider, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
+import { Box, Button, Divider, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 export const PokemonsPage = () => {
 
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const { isLoading, pokemons, page } = useSelector(state => state.pokemon);
 
-
+    const onHandleBack = () => {
+        navigate(-1);
+    }
 
     useEffect(() => {
         dispatch(getPokemons());
@@ -18,7 +22,26 @@ export const PokemonsPage = () => {
 
     return (
         <>
-            <Typography component='h1'>Pokemon page</Typography>
+            <Box sx={{
+                display: 'flex'
+            }}>
+                <Typography component='h1'>Pokemon page: </Typography>
+                <Button variant="contained"
+                    sx={{
+                        height: 30,
+                        width: 130,
+                        ml: 20,
+                        alignSelf: 'center',
+                        backgroundColor: 'lightgreen',
+                        color: 'black',
+                        ":hover": {
+                            boxShadow: 'initial',
+                            color: 'black',
+                            backgroundColor: 'yellow'
+                        }
+                    }} onClick={onHandleBack}>Back</Button>
+            </Box>
+
             <Divider />
             <Typography component='span'>
                 Loading: {!isLoading ? 'True' : 'False'}

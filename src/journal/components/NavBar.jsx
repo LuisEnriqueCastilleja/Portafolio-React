@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { AppBar, Grid, IconButton, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Grid, IconButton, Toolbar, Typography } from '@mui/material';
 import { DensityMedium, LogoutOutlined, MenuOutlined } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import '../styles/navBar.css';
@@ -35,13 +35,16 @@ export const NavBar = ({ drawerWidth = 240 }) => {
                     display: 'flex',
                     flexWrap: 'nowrap',
                 }}>
-                <IconButton className='iconClose'
-                    sx={{
-                        color: 'white',
-                    }}
-                    onClick={onClickSideBar}
-                ><DensityMedium />
-                </IconButton>
+                {
+                    (!isSideBarOpen) ? <IconButton className='iconClose'
+                        sx={{
+                            color: 'white',
+                        }}
+                        onClick={onClickSideBar}
+                    ><DensityMedium />
+                    </IconButton> : <Box></Box>
+                }
+
                 <Grid container direction='row' sx={{ flexWrap: 'wrap', justifyContent: 'flex-end', columnGap: 10, width: '100vw' }}>
                     <Typography variant='h6' noWrap component='div'> JournalApp </Typography>
 

@@ -18,7 +18,7 @@ export const NoteItem = ({ title = '', body, id, date, imageUrls = [] }) => {
                 <ListItemIcon>
                     <TurnedInNot />
                 </ListItemIcon>
-                <Grid container direction='column'>
+                <Grid container>
                     <ListItemText primary={title} />
                     <ListItemText secondary={body} />
                     <Grid item alignSelf='end'>

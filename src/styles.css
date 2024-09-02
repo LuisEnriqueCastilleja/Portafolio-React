@@ -17,7 +17,6 @@ input {
 
 ul {
   width: 100%;
-  align-content: center;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.03);
@@ -27,9 +26,11 @@ ul {
   justify-content: center;
   flex-wrap: wrap;
   list-style-type: none;
+  margin-top: 10px;
 }
 
 ul li {
+
   margin-bottom: 20px;
   margin-right: 20px;
 }

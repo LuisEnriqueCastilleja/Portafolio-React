@@ -21,7 +21,7 @@ export const GifPage = () => {
   return (
     <>
       <form onSubmit={onSubmit}>
-        <h1 className='gifh1'>Gif Page</h1>
+        <h1 className="font-weight-bold text-prtimary text-uppercase" >Gif Page</h1>
         <input type='text'
           value={inputValue}
           onChange={onInputChange} />

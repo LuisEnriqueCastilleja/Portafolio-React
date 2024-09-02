@@ -1,38 +1,39 @@
 import { StarOutlined } from "@mui/icons-material"
-import { Grid, Typography } from "@mui/material"
+import { Box, Grid, Typography } from "@mui/material"
+import { useState } from "react"
 
-export const NothingSelectedView = ({ activeNote, isActive, isSideBarOpen }) => {
+export const NothingSelectedView = ({ activeNote, isActive, drawerWidth = 240 }) => {
+    const [isSideBarOpen, setIsSideBarOpen] = useState(false);
 
     return (
         (isActive) ?
-            <Grid container
-                spacing={0}
-                direction="column"
-                justifyContent="center"
+            <Box
                 sx={{
                     backgroundColor: 'primary.main',
-                    borderRadius: 3
+                    borderRadius: 3,
+                    height: isSideBarOpen ? '95%' : '100%',
+                    mt: isSideBarOpen ? '20px' : '0px',
+                    width: isSideBarOpen ? `calc(100% - ${drawerWidth}px)` : '100%',
+                    ml: { sm: `${drawerWidth}px` },
                 }}>
-                <Grid item>
-                    <Typography sx={{
-                        fontSize: 80,
+                <Typography sx={{
+                    fontSize: 60,
+                    display: 'block',
+                }} color='white'
+                >{activeNote.title}</Typography>
+                <Typography color='white'
+                    sx={{
+                        fontSize: 40,
                         display: 'block',
-                    }} color='white'
-                    >{activeNote.title}</Typography>
-                    <Typography color='white'
-                        sx={{
-                            fontSize: 60,
-                            display: 'block',
-                        }}>{activeNote.body}</Typography>
-                    <Typography
-                        sx={{
-                            fontSize: 30,
-                            display: 'block',
-                        }}
-                        color='white'>{activeNote.date}</Typography>
-                </Grid>
+                    }}>{activeNote.body}</Typography>
+                <Typography
+                    sx={{
+                        fontSize: 20,
+                        display: 'block',
+                    }}
+                    color='white'>{activeNote.date}</Typography>
 
-            </Grid>
+            </Box>
             :
             <Grid container
                 spacing={0}

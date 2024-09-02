@@ -7,7 +7,73 @@ import { getNotes } from "../thunks"
 export const Notes = () => {
 
     const dispatch = useDispatch();
-    const { notes } = useSelector(state => state.journal);
+    // const { notes } = useSelector(state => state.journal);
+
+    const notes = [
+        {
+            title: 'Prueba titulo 1',
+            body: 'Esto es un body de prueba para ver el diseño y ver como se comporta',
+            id: 1,
+            date: Date.now(),
+            imageUrls: [],
+        },
+        {
+            title: 'Prueba titulo 2',
+            body: 'Esto es un body de prueba para ver el diseño y ver como se comporta',
+            id: 2,
+            date: Date.now(),
+            imageUrls: [],
+        },
+        {
+            title: 'Prueba titulo 3',
+            body: 'Esto es un body de prueba para ver el diseño y ver como se comporta',
+            id: 3,
+            date: Date.now(),
+            imageUrls: [],
+        },
+        {
+            title: 'Prueba titulo 4',
+            body: 'Esto es un body de prueba para ver el diseño y ver como se comporta',
+            id: 4,
+            date: Date.now(),
+            imageUrls: [],
+        },
+        {
+            title: 'Prueba titulo 5',
+            body: 'Esto es un body de prueba para ver el diseño y ver como se comporta',
+            id: 5,
+            date: Date.now(),
+            imageUrls: [],
+        },
+        {
+            title: 'Prueba titulo 6',
+            body: 'Esto es un body de prueba para ver el diseño y ver como se comporta',
+            id: 6,
+            date: Date.now(),
+            imageUrls: [],
+        },
+        {
+            title: 'Prueba titulo 7',
+            body: 'Esto es un body de prueba para ver el diseño y ver como se comporta',
+            id: 7,
+            date: Date.now(),
+            imageUrls: [],
+        },
+        {
+            title: 'Prueba titulo 8',
+            body: 'Esto es un body de prueba para ver el diseño y ver como se comporta',
+            id: 8,
+            date: Date.now(),
+            imageUrls: [],
+        },
+        {
+            title: 'Prueba titulo 9',
+            body: 'Esto es un body de prueba para ver el diseño y ver como se comporta',
+            id: 9,
+            date: Date.now(),
+            imageUrls: [],
+        },
+    ]
 
     useEffect(() => {
         dispatch(getNotes());
@@ -16,16 +82,16 @@ export const Notes = () => {
 
     return (
         <>
-            <Grid container direction='column' sx={{
-                direction: 'column',
-                display: 'flex'
+            <Grid container sx={{
+                display: 'flex',
+                flexWrap: 'wrap',
             }}>
-                <Typography variant='h6' noWrap component='div'>
-                    Notas pendientes de Luis Castilleja.
-                </Typography>
-                <Divider />
-                <List>
+                <List sx={{
+                    borderRadius: 0,
+                    backgroundColor: 'lightgray',
+                }}>
                     {
+
                         notes.map(note => (
                             <NoteItem key={note.id} {...note} />
                         ))

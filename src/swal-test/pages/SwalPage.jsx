@@ -1,7 +1,11 @@
 import { Box, Button, Grid, Toolbar } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 export const SwalPage = () => {
+
+    const navigate = useNavigate();
+
 
     const handleClick = () => {
 
@@ -40,6 +44,10 @@ export const SwalPage = () => {
         });
     }
 
+    const onHandleBack = () => {
+        navigate(-1);
+    }
+
     return (
         <Grid sx={{
             display: 'grid',
@@ -53,6 +61,23 @@ export const SwalPage = () => {
                 }} variant="contained" onClick={handleClick}>
                     Alert
                 </Button>
+
+                <Button variant="contained"
+                    sx={{
+                        height: 50,
+                        width: 130,
+                        alignSelf: 'center',
+                        justifySelf: 'end',
+                        backgroundColor: 'darkmagenta',
+                        mr: 1,
+                        color: 'white',
+                        ":hover": {
+                            boxShadow: 'initial',
+                            color: 'black',
+                            backgroundColor: 'yellow'
+                        }
+                    }} onClick={onHandleBack}>Back</Button>
+
                 <Button sx={{
                     justifySelf: 'end',
                     alignSelf: 'end',

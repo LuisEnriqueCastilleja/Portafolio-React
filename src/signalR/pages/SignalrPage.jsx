@@ -50,7 +50,6 @@ export const SignalrPage = () => {
             await connection.invoke("SendMessage", message);
         } catch (error) {
             console.log(e);
-
         }
     }
 

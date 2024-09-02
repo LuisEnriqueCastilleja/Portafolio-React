@@ -17,10 +17,12 @@
     "@mui/material": "^5.16.6",
     "@reduxjs/toolkit": "^2.2.7",
     "axios": "^1.7.3",
+    "bootstrap": "^5.3.3",
     "chart.js": "^4.4.4",
     "formik": "^2.4.6",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
+    "react-bootstrap": "^2.10.4",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.3.1",
     "react-redux": "^9.1.2",
@@ -28,7 +30,8 @@
     "react-signalr": "^0.2.22",
     "react-sweetalert2": "^0.6.0",
     "react-toastify": "^10.0.5",
-    "socket.io-client": "^4.7.5"
+    "socket.io-client": "^4.7.5",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
