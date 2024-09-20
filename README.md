@@ -1,3 +1,7 @@
+# This repository includes some of my knowledges about React.js
+
+- I have also worked with React.ts
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
