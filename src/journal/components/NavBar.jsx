@@ -61,65 +61,92 @@ export const NavBar = ({ drawerWidth = 240 }) => {
 
         <Grid
           container
-          direction="row"
           sx={{
             flexWrap: "wrap",
-            justifyContent: "flex-end",
             columnGap: 10,
             width: "100vw",
+            padding: "10px",
+            justifyContent: "space-between",
           }}
         >
-          <Typography variant="h6" noWrap component="div">
-            {" "}
-            JournalApp{" "}
-          </Typography>
+          <Grid
+            item
+            sx={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "space-between",
+            }}
+          >
+            <Typography variant="h6" component="div">
+              <Link className="link" to="/signalr/">
+                ChatSignalR
+              </Link>
+            </Typography>
 
-          <Typography variant="h6" noWrap component="div">
-            <Link className="link" to="/gifs/">
-              Gifs
-            </Link>
-          </Typography>
+            <Typography variant="h6" component="div">
+              <Link className="link" to="/gifs/">
+                Gifs
+              </Link>
+            </Typography>
 
-          <Typography variant="h6" noWrap component="div">
-            <Link className="link" to="/pokemons/">
-              Pokemons
-            </Link>
-          </Typography>
+            <Typography variant="h6" component="div">
+              <Link className="link" to="/pokemons/">
+                Pokemons
+              </Link>
+            </Typography>
+          </Grid>
 
-          <Typography variant="h6" noWrap component="div">
-            <Link className="link" to="/signalr/">
-              ChatSignalR
-            </Link>
-          </Typography>
+          <Grid
+            item
+            sx={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "space-between",
+            }}
+          >
+            <Typography variant="h6" component="div">
+              <Link className="link" to="/graphics/">
+                Graphics ChartJS
+              </Link>
+            </Typography>
 
-          <Typography variant="h6" noWrap component="div">
-            <Link className="link" to="/graphics/">
-              Graphics ChartJS
-            </Link>
-          </Typography>
+            <Typography variant="h6" component="div">
+              <Link className="link" to="/toast/">
+                Toast
+              </Link>
+            </Typography>
 
-          <Typography variant="h6" noWrap component="div">
-            <Link className="link" to="/toast/">
-              Toast
-            </Link>
-          </Typography>
+            <Typography variant="h6" component="div">
+              <Link className="link" to="/swal/">
+                Swal
+              </Link>
+            </Typography>
+          </Grid>
 
-          <Typography variant="h6" noWrap component="div">
-            <Link className="link" to="/swal/">
-              Swal
-            </Link>
-          </Typography>
+          <Grid
+            item
+            sx={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "space-between",
+            }}
+          >
+            <Typography variant="h6" component="div">
+              <Link className="link" to="/roadmap/">
+                RoadMap-Designs
+              </Link>
+            </Typography>
 
-          <Typography variant="h6" noWrap component="div">
-            <Link className="link" to="/roadmap/">
-              RoadMap-Designs
-            </Link>
-          </Typography>
-
-          <IconButton color="error" onClick={onLogout}>
-            {" "}
-            <LogoutOutlined />
-          </IconButton>
+            <IconButton
+              color="error"
+              sx={{
+                marginLeft: "auto",
+              }}
+              onClick={onLogout}
+            >
+              <LogoutOutlined />
+            </IconButton>
+          </Grid>
         </Grid>
       </Grid>
     </AppBar>

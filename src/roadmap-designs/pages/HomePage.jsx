@@ -1,14 +1,14 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.css";
-import { Link } from "react-router-dom";
+import "./styles/homeStyle.css";
 
 export const HomePage = () => {
   return (
-    <div>
-      <a className="me-3" href="/roadmap/CV">
-        CV
+    <div className="div-roadmap">
+      <a href="/roadmap/CV">CV</a>
+      <a href="/roadmap/basichtml" className="mx-1">
+        Basic HTML Website
       </a>
-      <a href="/roadmap/basichtml">Basic HTML Website</a>
+      <a href="/roadmap/changelog">Changelog</a>
     </div>
   );
 };

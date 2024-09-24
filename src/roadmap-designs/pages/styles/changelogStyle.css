@@ -1,0 +1,49 @@
+h6 {
+  color: gray;
+  opacity: 0.5;
+}
+
+.time-border {
+  background-color: black;
+  height: 100%;
+  width: 2px;
+  padding: 0px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* Asegura que la línea esté centrada */
+}
+.div-circle {
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  padding: 0px;
+  background-color: black;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centrar horizontal y verticalmente */
+  margin-top: 10px;
+}
+.time-date {
+  text-align: end;
+  width: 50%;
+  padding-right: 30px;
+}
+.time-event {
+  width: 50%;
+  padding-left: 30px;
+  color: black;
+  opacity: 1;
+}
+button {
+  display: block;
+  margin: auto;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  padding: 8px 30px;
+}
+.time-line-container {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
