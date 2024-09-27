@@ -13,8 +13,8 @@ import {
   MenuOutlined,
 } from "@mui/icons-material";
 import { Link } from "react-router-dom";
-import "../styles/navBar.css";
-import { closeSideBar, openSideBar } from "../slices/SideBarSlice";
+import "@/journal/styles/navBar.css";
+import { closeSideBar, openSideBar } from "@/journal/slices/SideBarSlice";
 
 export const NavBar = ({ drawerWidth = 240 }) => {
   const dispatch = useDispatch();

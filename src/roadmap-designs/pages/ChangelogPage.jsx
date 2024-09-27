@@ -1,4 +1,4 @@
-import "./styles/changelogStyle.css";
+import "@/roadmap-designs/styles/changelogStyle.css";
 
 export const ChangelogPage = () => {
   return (

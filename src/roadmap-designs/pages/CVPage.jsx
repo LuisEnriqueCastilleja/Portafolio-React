@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/cvStyle.css";
+import "@/roadmap-designs/styles/cvStyle.css";
 
 export const CVPage = () => {
   return (

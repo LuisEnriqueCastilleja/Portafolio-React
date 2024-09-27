@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/basicWebsiteStyle.css";
+import "@/roadmap-designs/styles/basicWebsiteStyle.css";
 
 export const BasicHTMLWebsitePage = () => {
   const date = new Date().getFullYear();

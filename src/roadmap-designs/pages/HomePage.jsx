@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/homeStyle.css";
+import "@/roadmap-designs/styles/homeStyle.css";
 
 export const HomePage = () => {
   return (
