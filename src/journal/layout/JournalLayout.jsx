@@ -11,15 +11,15 @@ export const JournalLayout = ({ children }) => {
         display: "grid",
         flexDirection: "column",
         height: "100vh",
-        gridTemplateRows: "20% 80%",
+        gridTemplateRows: "5% 95%",
       }}
     >
       <NavBar />
       {isSideBarOpen ? <SideBar /> : <Box></Box>}
-
       <Box
         sx={{
           margin: "10px",
+          paddingTop: "10px",
         }}
       >
         {children}

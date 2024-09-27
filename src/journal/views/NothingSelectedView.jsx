@@ -1,28 +1,28 @@
 import { StarOutlined } from "@mui/icons-material";
 import { Box, Grid, Typography } from "@mui/material";
-import { useState } from "react";
+import { useSelector } from "react-redux";
 
 export const NothingSelectedView = ({
   activeNote,
   isActive,
   drawerWidth = 240,
 }) => {
-  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+  const { isSideBarOpen } = useSelector((state) => state.sideBar);
 
   return isActive ? (
     <Box
       sx={{
+        height: "100%",
+        padding: "5px",
         backgroundColor: "primary.main",
         borderRadius: 3,
-        height: isSideBarOpen ? "95%" : "100%",
-        mt: isSideBarOpen ? "20px" : "0px",
         width: isSideBarOpen ? `calc(100% - ${drawerWidth}px)` : "100%",
-        ml: { sm: `${drawerWidth}px` },
+        ml: isSideBarOpen ? `${drawerWidth}px` : 0,
       }}
     >
       <Typography
         sx={{
-          fontSize: 60,
+          fontSize: 40,
           display: "block",
         }}
         color="white"
@@ -32,7 +32,7 @@ export const NothingSelectedView = ({
       <Typography
         color="white"
         sx={{
-          fontSize: 40,
+          fontSize: 20,
           display: "block",
         }}
       >
@@ -40,7 +40,7 @@ export const NothingSelectedView = ({
       </Typography>
       <Typography
         sx={{
-          fontSize: 20,
+          fontSize: 15,
           display: "block",
         }}
         color="white"
@@ -49,32 +49,34 @@ export const NothingSelectedView = ({
       </Typography>
     </Box>
   ) : (
-    <Grid
-      container
-      spacing={0}
-      direction="column"
-      alignItems="center"
-      justifyContent="center"
+    <Box
       sx={{
         display: "flex",
         height: "100%",
+        justifyContent: "center",
+        alignItems: "center",
         backgroundColor: "primary.main",
         borderRadius: 3,
+        width: isSideBarOpen ? `calc(100% - ${drawerWidth}px)` : "100%",
+        ml: isSideBarOpen ? `${drawerWidth}px` : 0,
       }}
     >
-      <Grid item>
-        <StarOutlined
-          sx={{
-            fontSize: 100,
-            color: "white",
-          }}
-        />
-      </Grid>
-      <Grid item>
-        <Typography color="white" variant="h5">
-          Selecciona o crea una nota
-        </Typography>
-      </Grid>
-    </Grid>
+      <StarOutlined
+        className="star-icon"
+        sx={{
+          fontSize: 100,
+          color: "white",
+        }}
+      />
+      <Typography
+        color="white"
+        variant="h5"
+        sx={{
+          marginLeft: "20px",
+        }}
+      >
+        Selecciona o crea una nota
+      </Typography>
+    </Box>
   );
 };

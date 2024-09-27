@@ -1,0 +1,11 @@
+.div-list {
+  overflow-y: scroll;
+  border-right: 1.3px solid #262254;
+}
+.div-list ::-webkit-scrollbar {
+  display: none;
+}
+.div-list {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

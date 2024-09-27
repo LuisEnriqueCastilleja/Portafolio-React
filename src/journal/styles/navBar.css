@@ -1,4 +1,20 @@
 .link {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .nav-box {
+    padding-top: "30px";
+  }
+  .star-icon {
+    font-size: 50;
+  }
+  .nav-box .link {
+    font-size: 10px;
+  }
+  .link {
+    white-space: "nowrap";
+    display: block;
+  }
 }

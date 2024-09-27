@@ -8,10 +8,7 @@ export const SideBar = ({ drawerWidth = 240, isVisible = false }) => {
   const dispatch = useDispatch();
   const { isSideBarOpen } = useSelector((state) => state.sideBar);
   const onClickSideBar = () => {
-    console.log(isSideBarOpen, "Side bar 1");
-
     isSideBarOpen ? dispatch(closeSideBar()) : dispatch(openSideBar());
-    console.log(isSideBarOpen, "Side bar 2");
   };
 
   return (
@@ -28,37 +25,40 @@ export const SideBar = ({ drawerWidth = 240, isVisible = false }) => {
           "& .MuiDrawer-paper": { boxSizing: "border-box", width: drawerWidth },
         }}
       >
-        <Box>
-          <Box
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            backgroundColor: "primary.main",
+          }}
+        >
+          <IconButton
+            className="iconClose"
             sx={{
-              display: "flex",
-              backgroundColor: "lightgray",
-              alignItems: "center",
+              color: "white",
+              "&:active": {
+                outline: "none",
+                boxShadow: "none",
+              },
+            }}
+            onClick={onClickSideBar}
+          >
+            <DensityMedium />
+          </IconButton>
+          <Typography
+            component="h3"
+            sx={{
+              textAlign: "center",
+              color: "white",
+              fontWeight: "bold",
+              justifyContent: "center",
+              mt: "3px",
             }}
           >
-            <IconButton
-              className="iconClose"
-              sx={{
-                color: "black",
-              }}
-              onClick={onClickSideBar}
-            >
-              <DensityMedium />
-            </IconButton>
-            <Typography
-              component="h3"
-              sx={{
-                textAlign: "center",
-                color: "black",
-                justifyContent: "center",
-                mt: "3px",
-              }}
-            >
-              Notas Pendientes Luis Castilleja
-            </Typography>
-          </Box>
-          <Notes></Notes>
+            Notas Pendientes
+          </Typography>
         </Box>
+        <Notes></Notes>
       </Drawer>
     </Box>
   );

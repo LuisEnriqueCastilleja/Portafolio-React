@@ -1,8 +1,9 @@
-import { Divider, Grid, List, Toolbar, Typography } from "@mui/material";
+import { Box, Divider, Grid, List, Toolbar, Typography } from "@mui/material";
 import { NoteItem } from "@/journal/components/";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getNotes } from "@/journal/thunks";
+import "@/journal/styles/notes.css";
 
 export const Notes = () => {
   const dispatch = useDispatch();
@@ -80,24 +81,24 @@ export const Notes = () => {
 
   return (
     <>
-      <Grid
-        container
+      <Box
+        className="div-list"
         sx={{
           display: "flex",
-          flexWrap: "wrap",
+          backgroundColor: "lightgray",
         }}
       >
         <List
           sx={{
             borderRadius: 0,
-            backgroundColor: "lightgray",
+            padding: "0px",
           }}
         >
           {notes.map((note) => (
             <NoteItem key={note.id} {...note} />
           ))}
         </List>
-      </Grid>
+      </Box>
     </>
   );
 };

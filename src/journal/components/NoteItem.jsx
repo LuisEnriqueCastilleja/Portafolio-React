@@ -17,16 +17,21 @@ export const NoteItem = ({ title = "", body, id, date, imageUrls = [] }) => {
   };
 
   return (
-    <ListItem disablePadding>
+    <ListItem sx={{ padding: "0px", margin: "0px" }}>
       <ListItemButton onClick={onClickNote}>
         <ListItemIcon>
           <TurnedInNot />
         </ListItemIcon>
         <Grid container>
-          <ListItemText primary={title} />
-          <ListItemText secondary={body} />
+          <ListItemText
+            sx={{
+              textAlign: "justify",
+            }}
+            primary={title}
+          />
+          <ListItemText sx={{ textAlign: "justify" }} secondary={body} />
           <Grid item alignSelf="end">
-            <ListItemText secondary={date} />
+            <ListItemText sx={{ textAlign: "justify" }} secondary={date} />
           </Grid>
         </Grid>
       </ListItemButton>

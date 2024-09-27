@@ -50,6 +50,10 @@ export const NavBar = ({ drawerWidth = 240 }) => {
             className="iconClose"
             sx={{
               color: "white",
+              "&:active": {
+                outline: "none",
+                boxShadow: "none",
+              },
             }}
             onClick={onClickSideBar}
           >
@@ -59,95 +63,73 @@ export const NavBar = ({ drawerWidth = 240 }) => {
           <Box></Box>
         )}
 
-        <Grid
-          container
+        <Box
+          className="nav-box"
           sx={{
-            flexWrap: "wrap",
-            columnGap: 10,
+            display: "flex",
             width: "100vw",
-            padding: "10px",
-            justifyContent: "space-between",
+            gap: "15px",
+            alignItems: "center",
           }}
         >
-          <Grid
-            item
+          <Typography
+            variant="h6"
+            component="div"
             sx={{
-              width: "100%",
-              display: "flex",
-              justifyContent: "space-between",
+              paddingLeft: "10px",
             }}
           >
-            <Typography variant="h6" component="div">
-              <Link className="link" to="/signalr/">
-                ChatSignalR
-              </Link>
-            </Typography>
+            <Link className="link" to="/signalr/">
+              ChatSignalR
+            </Link>
+          </Typography>
 
-            <Typography variant="h6" component="div">
-              <Link className="link" to="/gifs/">
-                Gifs
-              </Link>
-            </Typography>
+          <Typography variant="h6" component="div">
+            <Link className="link" to="/gifs/">
+              Gifs
+            </Link>
+          </Typography>
 
-            <Typography variant="h6" component="div">
-              <Link className="link" to="/pokemons/">
-                Pokemons
-              </Link>
-            </Typography>
-          </Grid>
+          <Typography variant="h6" component="div">
+            <Link className="link" to="/pokemons/">
+              Pokemons
+            </Link>
+          </Typography>
 
-          <Grid
-            item
+          <Typography variant="h6" component="div">
+            <Link className="link" to="/graphics/">
+              Graphics ChartJS
+            </Link>
+          </Typography>
+
+          <Typography variant="h6" component="div">
+            <Link className="link" to="/toast/">
+              Toast
+            </Link>
+          </Typography>
+
+          <Typography variant="h6" component="div">
+            <Link className="link" to="/swal/">
+              Swal
+            </Link>
+          </Typography>
+
+          <Typography variant="h6" component="div">
+            <Link className="link" to="/roadmap/">
+              RoadMap-Designs
+            </Link>
+          </Typography>
+
+          <IconButton
+            color="error"
             sx={{
-              width: "100%",
-              display: "flex",
-              justifyContent: "space-between",
+              marginLeft: "auto",
             }}
+            onClick={onLogout}
           >
-            <Typography variant="h6" component="div">
-              <Link className="link" to="/graphics/">
-                Graphics ChartJS
-              </Link>
-            </Typography>
-
-            <Typography variant="h6" component="div">
-              <Link className="link" to="/toast/">
-                Toast
-              </Link>
-            </Typography>
-
-            <Typography variant="h6" component="div">
-              <Link className="link" to="/swal/">
-                Swal
-              </Link>
-            </Typography>
-          </Grid>
-
-          <Grid
-            item
-            sx={{
-              width: "100%",
-              display: "flex",
-              justifyContent: "space-between",
-            }}
-          >
-            <Typography variant="h6" component="div">
-              <Link className="link" to="/roadmap/">
-                RoadMap-Designs
-              </Link>
-            </Typography>
-
-            <IconButton
-              color="error"
-              sx={{
-                marginLeft: "auto",
-              }}
-              onClick={onLogout}
-            >
-              <LogoutOutlined />
-            </IconButton>
-          </Grid>
-        </Grid>
+            <LogoutOutlined />
+          </IconButton>
+        </Box>
       </Grid>
     </AppBar>
   );
