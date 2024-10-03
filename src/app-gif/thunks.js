@@ -1,5 +1,5 @@
-import { gifApi } from "../api/gifApi";
-import { setGifs, startLoadingGifs } from "./slices/gifSlice";
+import { gifApi } from "@/api";
+import { setGifs, startLoadingGifs } from "@/app-gif/slices/gifSlice";
 
 export const getGifs = (nombre = "Naruto") => {
   return async (dispatch) => {

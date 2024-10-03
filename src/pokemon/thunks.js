@@ -1,4 +1,4 @@
-import { pokemonApi } from "../api/pokemonApi";
+import { pokemonApi } from "@/api";
 import { setPokemons, startLoadingPokemons } from "@/store/slices/pokemonSlice";
 
 export const getPokemons = (page = 0) => {

@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getGifs } from "@/app-gif/thunks";
+import { GifCard } from "../components/GifCard";
+import { useNavigate } from "react-router-dom";
 
 export const GifPage = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { isLoading, gifs } = useSelector((state) => state.gifs);
 
   const [inputValue, setInputValue] = useState("");
@@ -17,24 +20,39 @@ export const GifPage = () => {
     dispatch(getGifs(inputValue));
   };
 
+  const onHandleBack = () => {
+    navigate(-1);
+  };
+
   return (
     <>
       <form onSubmit={onSubmit}>
-        <h1 className="font-weight-bold text-prtimary text-uppercase">
-          Gif Page
-        </h1>
-        <input type="text" value={inputValue} onChange={onInputChange} />
-        <ul>
+        <div className="d-flex align-items-center w-100">
+          <h1 className="w-50 m-0 p-0 font-weight-bold text-prtimary text-uppercase">
+            Gif Page
+          </h1>
+          <div className="d-flex justify-content-end w-50">
+            <button
+              className="p-0 m-0"
+              style={{
+                width: 100,
+                height: 50,
+              }}
+              onClick={onHandleBack}
+            >
+              Back
+            </button>
+          </div>
+        </div>
+        <input
+          className="mt-2"
+          type="text"
+          value={inputValue}
+          onChange={onInputChange}
+        />
+        <ul className="d-flex justify-content-start m-0 flex-wrap w-100 p-0">
           {gifs.map((gif) => {
-            return (
-              <li key={gif.id}>
-                <img
-                  src={gif.images.downsized_medium.url}
-                  alt={gif.name}
-                  loading="lazy"
-                ></img>
-              </li>
-            );
+            return <GifCard key={gif.id} gif={gif} />;
           })}
         </ul>
       </form>
